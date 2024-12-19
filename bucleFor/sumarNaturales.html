@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bucle For - Suma de Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        #resultado {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bucle For - Suma de los Primeros Números Naturales</h2>
+        <button onclick="sumarNumeros()">Sumar Números</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function sumarNumeros() {
+            // Declara una variable para almacenar la suma
+            let num = prompt("Por favor, ingresa un numero:");
+            let suma = 0;
+            
+            // Usa un bucle for para sumar los primeros 10 números naturales
+            for (let i = 1; i <= num; i++) {
+                suma += i;
+            }
+            
+            // Imprime el resultado en la consola
+            console.log("La suma de los primeros "+num+" números naturales es:", suma);
+            
+            // Muestra el resultado en la página web
+            document.getElementById("resultado").textContent = `La suma de los primeros ${num} números naturales es: ${suma}`;
+        }
+    </script>
+</body>
+</html>

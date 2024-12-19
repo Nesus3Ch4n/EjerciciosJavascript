@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeros 10 Números Impares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #numeros {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Primeros 10 Números Impares</h2>
+        <button onclick="generarImpares()">Generar Números Impares</button>
+        <div id="numeros"></div>
+    </div>
+
+    <script>
+        function generarImpares() {
+            // Declara una variable de control
+            let i = 1;
+            // Obtener el contenedor de números
+            const contenedorNumeros = document.getElementById('numeros');
+            // Limpiar cualquier contenido previo
+            contenedorNumeros.innerHTML = '';
+
+            // Usa un bucle do...while para generar los primeros 10 números impares
+            do {
+                // Crear un nuevo div para cada número impar
+                const elementoNumero = document.createElement('div');
+                elementoNumero.textContent = i;
+                contenedorNumeros.appendChild(elementoNumero);
+                i += 2;
+            } while (i <= 19);
+        }
+    </script>
+</body>
+</html>

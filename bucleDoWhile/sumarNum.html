@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de los números del 1 al 50</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Suma de los Números del 1 al 50</h2>
+        <button onclick="sumarNumeros()">Sumar Números</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function sumarNumeros() {
+            // Declara una variable para almacenar la suma
+            let suma = 0;
+            // Declara una variable de control
+            let i = 1;
+            // Usa un bucle do...while para sumar los números del 1 al 50
+            do {
+                suma += i;
+                i++;
+            } while (i <= 50);
+            // Muestra el resultado en el contenedor 'resultado'
+            document.getElementById("resultado").textContent = "La suma de los números del 1 al 50 es: " + suma;
+        }
+    </script>
+</body>
+</html>

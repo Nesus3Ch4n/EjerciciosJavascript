@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Array de Frutas con Colores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        #frutas {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+        .fruta {
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Array de Frutas con Colores</h2>
+        <button onclick="imprimirFrutas()">Imprimir Frutas</button>
+        <div id="frutas"></div>
+    </div>
+
+    <script>
+        function imprimirFrutas() {
+            // Declara un array de frutas con su color
+            let frutas = [
+                { nombre: "Manzana", color: "red" },
+                { nombre: "Banana", color: "yellow" },
+                { nombre: "Cereza", color: "red" },
+                { nombre: "Durazno", color: "orange" }
+            ];
+
+            // Declara una variable de control
+            let i = 0;
+
+            // Obtener el contenedor de frutas
+            const contenedorFrutas = document.getElementById('frutas');
+            // Limpiar cualquier fruta previa
+            contenedorFrutas.innerHTML = '';
+
+            // Usa un bucle while para imprimir cada fruta y su color
+            while (i < frutas.length) {
+                // Crear un elemento para cada fruta
+                const elementoFruta = document.createElement('div');
+                elementoFruta.classList.add('fruta');
+                
+                // Asignar el color de fondo basado en el color de la fruta
+                elementoFruta.style.backgroundColor = frutas[i].color;
+
+                // Asignar el texto con nombre y color
+                elementoFruta.textContent = frutas[i].nombre + " - Color: " + frutas[i].color;
+                
+                // Agregar el elemento al contenedor
+                contenedorFrutas.appendChild(elementoFruta);
+                
+                i++;
+            }
+        }
+    </script>
+</body>
+</html>

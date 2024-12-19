@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Secuencia de Fibonacci</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Secuencia de Fibonacci</h2>
+        <button onclick="generarFibonacci()">Generar Secuencia</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function generarFibonacci() {
+            // Declara las variables iniciales
+            let a = 0, b = 1, siguiente;
+            // Declara una variable de control
+            let i = 1;
+            let resultado = "";
+
+            // Usa un bucle while para generar los primeros 10 números de la secuencia de Fibonacci
+            while (i <= 10) {
+                resultado += a + " "; // Añadir el número actual a la secuencia
+                siguiente = a + b;
+                a = b;
+                b = siguiente;
+                i++;
+            }
+
+            // Mostrar el resultado en la página
+            const contenedorResultado = document.getElementById('resultado');
+            contenedorResultado.textContent = "Los primeros 10 números de la secuencia de Fibonacci son: " + resultado;
+        }
+    </script>
+</body>
+</html>

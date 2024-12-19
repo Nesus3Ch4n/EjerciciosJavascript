@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Volumen de Cilindro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora de Volumen de Cilindro</h2>
+        <button onclick="calcularVolumen()">Calcular Volumen</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcularVolumen() {
+            // Solicitar radio al usuario
+            const RADIO = parseFloat(prompt("Ingrese el radio del cilindro:"));
+            
+            // Solicitar altura al usuario
+            const ALTURA = parseFloat(prompt("Ingrese la altura del cilindro:"));
+            
+            // Verificar que los valores sean números válidos
+            if (isNaN(RADIO) || isNaN(ALTURA)) {
+                document.getElementById('resultado').innerHTML = "Por favor, ingrese valores numéricos válidos.";
+                return;
+            }
+            
+            // Calcular volumen
+            const VOLUMEN = Math.PI * RADIO * RADIO * ALTURA;
+            
+            // Mostrar resultado
+            document.getElementById('resultado').innerHTML = 
+                `Volumen del cilindro: ${VOLUMEN.toFixed(2)} unidades cúbicas`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificación de Mayoría de Edad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .mayor-edad {
+            color: green;
+            font-weight: bold;
+        }
+        .menor-edad {
+            color: red;
+            font-weight: bold;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Verificación de Mayoría de Edad</h2>
+        <button onclick="verificarEdad()">Verificar Edad</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function verificarEdad() {
+            // Solicitar la edad al usuario
+            let edad = parseInt(prompt("Ingrese su edad:"));
+            
+            // Obtener elemento de resultado
+            const resultado = document.getElementById('resultado');
+            
+            // Verificar si la edad es un número válido
+            if (isNaN(edad)) {
+                resultado.innerHTML = "Por favor, ingrese un número válido.";
+                return;
+            }
+            
+            // Usar una condición para verificar la mayoría de edad
+            if (edad >= 18) {
+                resultado.innerHTML = '<span class="mayor-edad">Eres mayor de edad.</span>';
+            } else {
+                resultado.innerHTML = '<span class="menor-edad">Eres menor de edad.</span>';
+            }
+        }
+    </script>
+</body>
+</html>

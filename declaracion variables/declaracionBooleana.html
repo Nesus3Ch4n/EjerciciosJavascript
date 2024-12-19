@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Estudiante</title>
+    <style>
+        body{
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Eres estudiante?</h1>
+    <p id="resultado"></p> <!-- Aquí se mostrará el resultado -->
+
+    <script>
+        // Solicita al usuario confirmar si es estudiante
+        let esEstudiante = confirm("¿Eres estudiante?");
+
+        // Usa una condición para verificar el valor de la variable
+        if (esEstudiante) {
+            console.log("Eres un estudiante.");
+            document.getElementById("resultado").textContent = "Eres un estudiante.";
+        } else {
+            console.log("No eres un estudiante.");
+            document.getElementById("resultado").textContent = "No eres un estudiante.";
+        }
+    </script>
+</body>
+</html>

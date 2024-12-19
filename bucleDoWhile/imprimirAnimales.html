@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animales con Bucle do...while</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #animales {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Animales con Bucle do...while</h2>
+        <button onclick="imprimirAnimales()">Imprimir Animales</button>
+        <div id="animales"></div>
+    </div>
+
+    <script>
+        function imprimirAnimales() {
+            // Declara un array de animales
+            let animales = ["Perro", "Gato", "Conejo", "Tortuga"];
+            // Declara una variable de control
+            let i = 0;
+            // Obtener el contenedor de animales
+            const contenedorAnimales = document.getElementById('animales');
+            // Limpiar cualquier contenido previo
+            contenedorAnimales.innerHTML = '';
+
+            // Usa un bucle do...while para imprimir cada animal
+            do {
+                // Crear un nuevo div para cada animal
+                const elementoAnimal = document.createElement('div');
+                elementoAnimal.textContent = animales[i];
+                contenedorAnimales.appendChild(elementoAnimal);
+                i++;
+            } while (i < animales.length);
+        }
+    </script>
+</body>
+</html>

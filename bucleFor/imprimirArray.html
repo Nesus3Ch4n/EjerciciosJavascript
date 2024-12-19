@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bucle For - Colores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        #colores {
+            margin-top: 15px;
+        }
+        .color {
+            color: white;
+            width: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+            text-align: center;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bucle For - Colores</h2>
+        <button onclick="imprimirColores()">Imprimir Colores</button>
+        <div id="colores"></div>
+    </div>
+
+    <script>
+        function imprimirColores() {
+            // Declara un array de colores y sus nombres
+            let colores = [
+                { nombre: "Rojo", codigo: "red" },
+                { nombre: "Verde", codigo: "green" },
+                { nombre: "Azul", codigo: "blue" },
+                { nombre: "Amarillo", codigo: "yellow" }
+            ];
+            
+            // Obtener el contenedor de colores
+            const contenedorColores = document.getElementById('colores');
+            
+            // Limpiar cualquier color previo
+            contenedorColores.innerHTML = '';
+            
+            // Usa un bucle for para imprimir cada color
+            for (let i = 0; i < colores.length; i++) {
+                // Crear un elemento para cada color
+                const elementoColor = document.createElement('div');
+                elementoColor.textContent = colores[i].nombre;
+                elementoColor.className = 'color';
+                
+                // Establecer el fondo de cada elemento según el color
+                elementoColor.style.backgroundColor = colores[i].codigo;
+                
+                // Agregar el elemento al contenedor
+                contenedorColores.appendChild(elementoColor);
+            }
+        }
+    </script>
+</body>
+</html>

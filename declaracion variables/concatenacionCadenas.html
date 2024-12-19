@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenación de Cadenas</title>
+
+    <style>
+        body{
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Concatenación de Cadenas con JavaScript</h1>
+    <p id="mensaje"></p> <!-- Aquí se mostrará el mensaje concatenado -->
+
+    <script>
+        // Solicita al usuario dos cadenas de texto
+        let saludo = prompt("Ingresa un saludo:");
+        let nombre = prompt("Ingresa un nombre:");
+
+        // Concatenar las cadenas
+        let mensaje = saludo + " " + nombre + "!";
+
+        // Imprimir el mensaje en la consola
+        console.log(mensaje);
+
+        // Mostrar el mensaje en la página web
+        document.getElementById("mensaje").textContent = mensaje;
+    </script>
+</body>
+</html>

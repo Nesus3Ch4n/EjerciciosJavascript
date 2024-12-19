@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercambio de Variables</title>
+    <style>
+        body{
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Intercambio de Variables</h1>
+    <p id="resultado"></p> <!-- Aquí se mostrará el resultado del intercambio -->
+
+    <script>
+        // Declara dos variables
+        let a = 1;
+        let b = 2;
+
+        // Imprime los valores originales
+        console.log("Antes del intercambio: a =", a, ", b =", b);
+        
+        // Muestra los valores originales en la página
+        let mensajeOriginal = `Antes del intercambio: a = ${a}, b = ${b}`;
+
+        // Intercambia los valores
+        let temp = a;
+        a = b;
+        b = temp;
+
+        // Imprime los valores después del intercambio
+        console.log("Después del intercambio: a =", a, ", b =", b);
+        
+        // Muestra los valores después del intercambio en la página
+        let mensajeIntercambio = `Después del intercambio: a = ${a}, b = ${b}`;
+
+        // Actualiza el contenido del HTML
+        document.getElementById("resultado").innerHTML = `
+            <p>${mensajeOriginal}</p>
+            <p>${mensajeIntercambio}</p>
+        `;
+    </script>
+</body>
+</html>

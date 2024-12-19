@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Nombre</title>
+    <style>
+        body{
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mostrar Nombre con JavaScript</h1>
+    <p id="nombre"></p> <!-- Aquí se mostrará el nombre -->
+
+    <script>
+        // Pide al usuario que ingrese su nombre
+        let nombre = prompt("Por favor, ingresa tu nombre:");
+
+        // Imprime el valor de la variable 'nombre' en la consola
+        console.log(nombre);
+
+        // Muestra el valor de la variable 'nombre' en la página web
+        document.getElementById("nombre").textContent = "Mi nombre es: " + nombre;
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número Máximo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Encontrar el Número Máximo</h2>
+        <p>Array: [5, 12, 8, 21, 16]</p>
+        <button onclick="encontrarMaximo()">Encontrar Máximo</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function encontrarMaximo() {
+            // Declara un array de números
+            let numeros = [5, 12, 8, 21, 16];
+
+            // Declara una variable para almacenar el máximo
+            let maximo = numeros[0];
+
+            // Usa un bucle for para encontrar el número máximo
+            for (let i = 1; i < numeros.length; i++) {
+                if (numeros[i] > maximo) {
+                    maximo = numeros[i];
+                }
+            }
+
+            // Obtener el contenedor de resultado
+            const contenedorResultado = document.getElementById('resultado');
+
+            // Mostrar el resultado en el contenedor
+            contenedorResultado.textContent = "El número máximo es: " + maximo;
+        }
+    </script>
+</body>
+</html>

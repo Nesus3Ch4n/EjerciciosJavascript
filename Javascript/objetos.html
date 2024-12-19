@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Propiedades de un Objeto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Imprimir Propiedades de un Objeto</h2>
+        <button onclick="imprimirPropiedades()">Imprimir Propiedades</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function imprimirPropiedades() {
+            // Declara un objeto
+            let persona = {
+                nombre: "Juan",
+                edad: 30,
+                ciudad: "Madrid"
+            };
+
+            // Declara el contenedor para mostrar las propiedades
+            const contenedorResultado = document.getElementById('resultado');
+            
+            // Limpiar cualquier resultado previo
+            contenedorResultado.innerHTML = '';
+
+            // Usa un bucle for...of para imprimir las propiedades del objeto
+            for (let i of Object.keys(persona)) {
+                // Crear un nuevo elemento de texto para cada propiedad
+                const propiedadElemento = document.createElement('p');
+                propiedadElemento.textContent = i + ": " + persona[i];
+                contenedorResultado.appendChild(propiedadElemento);
+            }
+        }
+    </script>
+</body>
+</html>

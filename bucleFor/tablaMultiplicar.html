@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla de Multiplicar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        #tabla {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 20px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Generar Tabla de Multiplicar</h2>
+        <button onclick="generarTabla()">Generar Tabla</button>
+        <div id="tabla"></div>
+    </div>
+
+    <script>
+        function generarTabla() {
+            // Declara una variable para el número de la tabla
+            let numero = prompt("Ingrese un numero");
+            // Obtiene el contenedor donde se mostrará la tabla
+            const contenedorTabla = document.getElementById('tabla');
+            // Limpia cualquier contenido previo
+            contenedorTabla.innerHTML = '';
+
+            // Usa un bucle for para generar la tabla de multiplicar del número
+            for (let i = 1; i <= 10; i++) {
+                const resultado = numero * i;
+                contenedorTabla.innerHTML += `${numero} x ${i} = ${resultado}<br>`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificador de Clima</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .caluroso {
+            color: red;
+            font-weight: bold;
+        }
+        .fresco {
+            color: blue;
+            font-weight: bold;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Verificador de Clima</h2>
+        <button onclick="verificarClima()">Verificar Clima</button>
+        <p id="temperatura-ingresada"></p>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function verificarClima() {
+            // Solicitar la temperatura al usuario
+            let temperatura = parseFloat(prompt("Ingrese la temperatura (en grados Celsius):"));
+            
+            // Obtener elementos de resultado
+            const temperaturaIngresada = document.getElementById('temperatura-ingresada');
+            const resultado = document.getElementById('resultado');
+            
+            // Validar entrada
+            if (isNaN(temperatura)) {
+                temperaturaIngresada.textContent = "";
+                resultado.textContent = "Por favor, ingrese una temperatura válida.";
+                return;
+            }
+            
+            // Mostrar temperatura ingresada
+            temperaturaIngresada.textContent = `Temperatura: ${temperatura}°C`;
+            
+            // Usar operador ternario para determinar el clima
+            let clima = (temperatura > 25) ? "Caluroso" : "Fresco";
+            
+            // Mostrar resultado con estilo
+            resultado.textContent = `El clima está ${clima}`;
+            resultado.className = clima.toLowerCase();
+        }
+    </script>
+</body>
+</html>

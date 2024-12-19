@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Calificaciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .calificacion {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .A { color: green; }
+        .B { color: blue; }
+        .C { color: orange; }
+        .D { color: red; }
+        .F { color: darkred; }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sistema de Calificaciones</h2>
+        <button onclick="calcularCalificacion()">Calcular Calificación</button>
+        <p id="nota-ingresada"></p>
+        <p id="resultado" class="calificacion"></p>
+    </div>
+
+    <script>
+        function calcularCalificacion() {
+            // Solicitar la nota al usuario
+            let nota = parseFloat(prompt("Ingrese la nota (0-100):"));
+            
+            // Obtener elementos de resultado
+            const notaIngresada = document.getElementById('nota-ingresada');
+            const resultado = document.getElementById('resultado');
+            
+            // Validar entrada
+            if (isNaN(nota) || nota < 0 || nota > 100) {
+                notaIngresada.textContent = "";
+                resultado.textContent = "Por favor, ingrese una nota válida entre 0 y 100.";
+                return;
+            }
+            
+            // Mostrar nota ingresada
+            notaIngresada.textContent = `Nota: ${nota}`;
+            
+            // Determinar calificación
+            if (nota >= 90) {
+                resultado.textContent = "Calificación: A";
+                resultado.className = "calificacion A";
+            } else if (nota >= 80) {
+                resultado.textContent = "Calificación: B";
+                resultado.className = "calificacion B";
+            } else if (nota >= 70) {
+                resultado.textContent = "Calificación: C";
+                resultado.className = "calificacion C";
+            } else if (nota >= 60) {
+                resultado.textContent = "Calificación: D";
+                resultado.className = "calificacion D";
+            } else {
+                resultado.textContent = "Calificación: F";
+                resultado.className = "calificacion F";
+            }
+        }
+    </script>
+</body>
+</html>

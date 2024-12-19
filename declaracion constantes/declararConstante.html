@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Constantes en JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .original {
+            color: blue;
+        }
+        .error {
+            color: red;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Constantes en JavaScript</h2>
+        <button onclick="demoConstante()">Demostrar Constante</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function demoConstante() {
+            const resultado = document.getElementById('resultado');
+            
+            // Limpiar resultados anteriores
+            resultado.innerHTML = '';
+            
+            // Declara una constante
+            const EDAD = 25;
+            
+            // Crea un párrafo para el valor original
+            const originalP = document.createElement('p');
+            originalP.innerHTML = `<span class="original">Edad original: ${EDAD}</span>`;
+            resultado.appendChild(originalP);
+            
+            // Intenta reasignar la constante
+            try {
+                // Este código lanzará un error
+                EDAD = 30;
+            } catch (error) {
+                // Crear un párrafo para el mensaje de error
+                const errorP = document.createElement('p');
+                errorP.innerHTML = `<span class="error">Error: No se puede reasignar una constante.</span>`;
+                resultado.appendChild(errorP);
+                
+                // Mostrar detalles del error en consola
+                console.error("Detalles del error:", error);
+            }
+        }
+    </script>
+</body>
+</html>

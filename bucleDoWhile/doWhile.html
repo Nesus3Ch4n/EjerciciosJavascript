@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bucle do...while - Números del 1 al 10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        #numeros {
+            margin-top: 15px;
+            font-size: 18px;
+            text-align: left;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bucle do...while - Números del 1 al 10</h2>
+        <button onclick="imprimirNumeros()">Imprimir Números</button>
+        <div id="numeros"></div>
+    </div>
+
+    <script>
+        function imprimirNumeros() {
+            // Declara una variable de control
+            let i = 1;
+            let numeros = "";
+            
+            // Usa un bucle do...while para imprimir los números del 1 al 10
+            do {
+                numeros += i + "<br>";  // Agrega el número seguido de un salto de línea
+                i++;
+            } while (i <= 10);
+            
+            // Mostrar los números en el contenedor
+            document.getElementById("numeros").innerHTML = numeros;
+        }
+    </script>
+</body>
+</html>

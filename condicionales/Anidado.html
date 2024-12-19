@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificación para Conducir</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 350px;
+        }
+        .permitido {
+            color: green;
+            font-weight: bold;
+        }
+        .denegado {
+            color: red;
+            font-weight: bold;
+        }
+        .condicion {
+            margin: 10px 0;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Verificación para Conducir</h2>
+        <div>
+            <label>
+                <input type="checkbox" id="licencia"> Tiene Licencia
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" id="cinturon"> Usa Cinturón
+            </label>
+        </div>
+        <button onclick="verificarCondiciones()">Verificar Condiciones</button>
+        <p id="resultado" class="condicion"></p>
+    </div>
+
+    <script>
+        function verificarCondiciones() {
+            // Obtener el estado de las condiciones desde los checkboxes
+            let tieneLicencia = document.getElementById('licencia').checked;
+            let usaCinturon = document.getElementById('cinturon').checked;
+            
+            // Obtener elemento de resultado
+            const resultado = document.getElementById('resultado');
+            
+            // Verificar condiciones anidadas
+            if (tieneLicencia) {
+                if (usaCinturon) {
+                    resultado.textContent = "Puedes conducir.";
+                    resultado.className = "condicion permitido";
+                } else {
+                    resultado.textContent = "No puedes conducir sin cinturón.";
+                    resultado.className = "condicion denegado";
+                }
+            } else {
+                resultado.textContent = "No puedes conducir sin licencia.";
+                resultado.className = "condicion denegado";
+            }
+        }
+    </script>
+</body>
+</html>

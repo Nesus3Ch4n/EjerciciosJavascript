@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones Matemáticas</title>
+    <style>
+        body{
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Operaciones Matemáticas con JavaScript</h1>
+    <p id="resultado"></p> <!-- Aquí se mostrarán los resultados -->
+
+    <script>
+        // Pedir al usuario dos números usando prompt
+        let num1 = parseFloat(prompt("Ingresa el primer número:"));
+        let num2 = parseFloat(prompt("Ingresa el segundo número:"));
+
+        // Validar que los valores ingresados son números
+        if (!isNaN(num1) && !isNaN(num2)) {
+            // Realizar operaciones matemáticas
+            let suma = num1 + num2;
+            let resta = num1 - num2;
+            let multiplicacion = num1 * num2;
+            let division = num1 / num2;
+
+            // Mostrar los resultados en la consola
+            console.log("Suma:", suma);
+            console.log("Resta:", resta);
+            console.log("Multiplicación:", multiplicacion);
+            console.log("División:", division);
+
+            // Mostrar los resultados en la página web
+            document.getElementById("resultado").innerHTML = `
+                <strong>Resultados:</strong><br>
+                Suma: ${suma} <br>
+                Resta: ${resta} <br>
+                Multiplicación: ${multiplicacion} <br>
+                División: ${division}
+            `;
+        } else {
+            alert("Por favor, ingresa valores numéricos válidos.");
+            document.getElementById("resultado").textContent = "Error: No se ingresaron números válidos.";
+        }
+    </script>
+</body>
+</html>

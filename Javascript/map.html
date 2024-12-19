@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Valores de un Map</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Imprimir Valores de un Map</h2>
+        <button onclick="imprimirValores()">Imprimir Valores</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function imprimirValores() {
+            // Declara un Map
+            let mapa = new Map([
+                ["nombre", "Ana"],
+                ["edad", 25],
+                ["ciudad", "Barcelona"]
+            ]);
+
+            // Declara el contenedor para mostrar los valores
+            const contenedorResultado = document.getElementById('resultado');
+            
+            // Limpiar cualquier resultado previo
+            contenedorResultado.innerHTML = '';
+
+            // Usa un bucle for...of para imprimir los valores del Map
+            for (let [clave, valor] of mapa) {
+                // Crear un nuevo elemento de texto para cada valor
+                const valorElemento = document.createElement('p');
+                valorElemento.textContent = clave + ": " + valor;
+                contenedorResultado.appendChild(valorElemento);
+            }
+        }
+    </script>
+</body>
+</html>

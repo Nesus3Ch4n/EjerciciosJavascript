@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Suma de Números - Bucle While</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Suma de Números del 1 al 100</h2>
+        <button onclick="calcularSuma()">Calcular Suma</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularSuma() {
+            // Inicializa la suma y la variable de control
+            let suma = 0;
+            let i = 1;
+
+            // Usa un bucle while para sumar los números del 1 al 100
+            while (i <= 100) {
+                suma += i;
+                i++;
+            }
+
+            // Muestra el resultado en la página
+            document.getElementById('resultado').textContent = "La suma de los números del 1 al 100 es: " + suma;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Numeros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #frutas {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Array de Numeros</h2>
+        <button onclick="imprimirFrutas()">Imprimir Numeros</button>
+        <div id="frutas"></div>
+    </div>
+
+    <script>
+        function imprimirFrutas() {
+            // Declara un array de frutas
+            let frutas = [1,2,3,4,5];
+            
+            // Obtener el contenedor de frutas
+            const contenedorFrutas = document.getElementById('frutas');
+            
+            // Limpiar cualquier fruta previa
+            contenedorFrutas.innerHTML = '';
+
+            // Usa un bucle for para imprimir cada fruta
+            for (let i = 0; i < frutas.length; i++) {
+                // Crear un elemento para cada fruta
+                const elementoFruta = document.createElement('div');
+                elementoFruta.textContent = frutas[i];
+                
+                // Agregar el elemento al contenedor
+                contenedorFrutas.appendChild(elementoFruta);
+            }
+        }
+    </script>
+</body>
+</html>
